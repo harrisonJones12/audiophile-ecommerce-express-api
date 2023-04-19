@@ -1,30 +1,18 @@
-
-
-require('dotenv').config();
-
 const express = require('express');
-const mongoose = require('mongoose');
-const mongoString = process.env.DATABASE_CONNECTION_URL;
-const routes = require('./routes/index');
+// const routes = require('./routes/index');
+const cors = require('cors');
 
-mongoose.connect(mongoString);
-
-const database = mongoose.connection;
-
-database.on('error', (error) => {
-    console.log(error)
-})
-
-database.once('connected', () => {
-    console.log('Database Connected');
-})
+const PORT = process.env.PORT || 5050;
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
-app.use('/api', routes)
+app.use((err, _req, res, next) => {
+    res.status(500).send("Uh oh! An unexpected error occured")
+})
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
+app.listen(PORT, () => {
+    console.log(`Server is running at port ${PORT}`)
 })
