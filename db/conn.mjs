@@ -6,8 +6,6 @@ config()
 
 const connectionString = process.env.DATABASE_CONNECTION_URL || "";
 
-console.log('mongo string', connectionString);
-
 const client = new MongoClient(connectionString);
 
 let conn;
@@ -18,7 +16,5 @@ try {
 }
 
 let db = conn.db("shop");
-
-console.log('database', db);
 
 export default db;
