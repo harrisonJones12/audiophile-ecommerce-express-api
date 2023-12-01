@@ -13,10 +13,10 @@ app.use(express.json());
 
 app.use("/", products)
 
-app.use((err, _req, res, next) => {
-    res.status(500).send("Uh oh! An unexpected error occured")
-})
+// app.use((err, _req, res, next) => {
+//     res.status(500).send("Uh oh! An unexpected error occured")
+// })
 
-app.listen(PORT, () => {
-    console.log(`Server is running at port ${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`Server is running at port ${PORT}`)
+// })
