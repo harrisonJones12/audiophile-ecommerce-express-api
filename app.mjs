@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 5050;
 
 // const usePortOrUrl = 'https://audiophile-v1qp.onrender.com'
 
+
+const app = express();
+
 app.use(csp({
     policies: {
         'default-src': [csp.NONE],
@@ -17,7 +20,6 @@ app.use(csp({
     }
 }));
 
-const app = express();
 
 app.use(cors());
 app.use(express.json());
