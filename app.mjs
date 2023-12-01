@@ -6,6 +6,16 @@ import products from './routes/products.mjs';
 
 const PORT = process.env.PORT || 5050;
 
+// const usePortOrUrl = 'https://audiophile-v1qp.onrender.com'
+
+const csp = require('express-csp-header');
+app.use(csp({
+    policies: {
+        'default-src': [csp.NONE],
+        'img-src': [csp.SELF],
+    }
+}));
+
 const app = express();
 
 app.use(cors());
