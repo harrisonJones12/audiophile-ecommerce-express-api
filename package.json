@@ -7,7 +7,8 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
+    "build": "npm install",
     "start": "nodemon app.mjs",
-    "build": "npm install node app.mjs"
+    "start-dev": "nodemon app.mjs"
   }
 }
