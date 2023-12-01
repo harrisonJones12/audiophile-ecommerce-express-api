@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npm install",
-    "start": "app.mjs",
+    "start": "node app.mjs",
     "start-dev": "nodemon app.mjs"
   }
 }
