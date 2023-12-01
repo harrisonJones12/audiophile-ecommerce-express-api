@@ -8,6 +8,6 @@
   },
   "scripts": {
     "start": "nodemon app.mjs",
-    "serve": "./app.mjs"
+    "build": "node app.mjs"
   }
 }
