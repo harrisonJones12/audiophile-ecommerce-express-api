@@ -8,6 +8,6 @@
   },
   "scripts": {
     "start": "nodemon app.mjs",
-    "build": "node app.mjs"
+    "build": "npm install node app.mjs"
   }
 }
