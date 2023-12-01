@@ -2,13 +2,14 @@
 import express from "express";
 import cors from "cors"
 
+import csp from "express-csp-header";
+
 import products from './routes/products.mjs';
 
 const PORT = process.env.PORT || 5050;
 
 // const usePortOrUrl = 'https://audiophile-v1qp.onrender.com'
 
-const csp = require('express-csp-header');
 app.use(csp({
     policies: {
         'default-src': [csp.NONE],
