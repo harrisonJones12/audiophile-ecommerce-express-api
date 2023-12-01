@@ -17,6 +17,6 @@ app.use("/", products)
 //     res.status(500).send("Uh oh! An unexpected error occured")
 // })
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running at port ${PORT}`)
-// })
+app.listen(PORT, () => {
+    console.log(`Server is running at port ${PORT}`)
+})
