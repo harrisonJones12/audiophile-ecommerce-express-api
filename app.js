@@ -7,7 +7,6 @@ const express = require('express')
 
 // const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
 
-// import products from './routes/products.mjs';
 const products = require('./routes/products.js');
 
 const helmet = require('helmet')
@@ -15,7 +14,6 @@ const helmet = require('helmet')
 
 const PORT = process.env.PORT || 5050;
 
-// const usePortOrUrl = 'https://audiophile-v1qp.onrender.com'
 
 
 const app = express();
@@ -32,14 +30,9 @@ app.use(
     })
 )
 
-// app.use(cors());
 app.use(express.json());
 
 app.use("/", products)
-
-// app.use((err, _req, res, next) => {
-//     res.status(500).send("Uh oh! An unexpected error occured")
-// })
 
 app.listen(PORT, () => {
     console.log(`Server is running at port ${PORT}`)
