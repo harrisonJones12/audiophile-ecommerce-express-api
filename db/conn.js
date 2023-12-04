@@ -14,7 +14,7 @@ async function conectToDb() {
     db = client.db('shop');
 }
 
-conectToDb().catch(console.dir);
+conectToDb().catch(e => console.error(e));
 
 
 module.exports = db;

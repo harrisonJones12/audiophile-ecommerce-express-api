@@ -6,13 +6,15 @@ const db = require('../db/conn.js');
 const router = express.Router();
 
 let products;
+let productsCollection;
 
 const getProducts = async () => {
-
-    const productsCollection = await db.collection('products');
-
-    products = await productsCollection.findOne({ name: "YX1 Wireless Earphones" });
-
+    if (db) {
+        productsCollection = await db.collection('products');
+    }
+    /*  call toArray to make data in products collection 
+    availble to be used */
+    products = await productsCollection.find({}).toArray();
 
 }
 
@@ -21,7 +23,9 @@ const getProducts = async () => {
 router.get("/get-products", async (req, res) => {
     await getProducts();
     // console.log('products', products);
-    res.send({ products }).status(200);
+    if (products) {
+        res.send({ products }).status(200);
+    }
 });
 
 module.exports = router;
