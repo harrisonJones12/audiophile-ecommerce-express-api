@@ -12,7 +12,7 @@ const getProducts = async () => {
     if (db) {
         productsCollection = await db.collection('products');
     }
-    /*  call toArray to make data in products collection 
+    /*  call toArray to make data in products collection/cursor
     availble to be used */
     products = await productsCollection.find({}).toArray();
 
