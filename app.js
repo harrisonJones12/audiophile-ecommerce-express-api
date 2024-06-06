@@ -1,7 +1,7 @@
 // const routes = require('./routes/index');
 const express = require('express')
 // import cors from "cors"
-// const cors = require('cors')
+const cors = require('cors')
 
 // import expressCspHeader from "express-csp-header";
 
@@ -17,6 +17,8 @@ const PORT = process.env.PORT || 5050;
 
 
 const app = express();
+
+app.use(cors())
 
 const scriptSources = ["'self'", "'unsafe-inline'", "'unsafe-eval'"];
 
